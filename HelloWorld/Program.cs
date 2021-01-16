@@ -88,7 +88,7 @@ namespace HelloWorld
 
             // *** Validate an email address ***
 
-            /*
+            
             Console.WriteLine("Please enter your email address:");
             var emailInput = Console.ReadLine();
 
@@ -99,7 +99,7 @@ namespace HelloWorld
             var atCounter = 0;
             var dotCounter = 0;
             var indexOfAt = Array.IndexOf(emailChars, '@');
-            var indexOfDot = 0;
+            var indexOfDot = Array.LastIndexOf(emailChars, '.');
 
             var currentIndex = 0;
 
@@ -112,7 +112,6 @@ namespace HelloWorld
                 else if (character == '.' && currentIndex > indexOfAt)
                 {
                     dotCounter++;
-                    indexOfDot = currentIndex;
                 }
                 currentIndex++;
             }
@@ -139,7 +138,14 @@ namespace HelloWorld
             }
 
             Console.WriteLine(emailResponse);
-            */
+            
+
+            // *** Mocking ***
+
+            //Console.WriteLine("Enter a sentence.");
+            //var sentence = Console.ReadLine();
+
+
 
 
             // ***** Mask Sensitive Information *****
@@ -191,17 +197,11 @@ namespace HelloWorld
                 string squaredResult = "";
                 for (var i = 0; i < intArray.Length; i++)
                 {
-                    if (i == intArray.Length - 1)
-                    {
-                        var result = intArray[i] * intArray[i];
-                        squaredResult += result;
-                    } else
-                    {
-                        var result = intArray[i] * intArray[i];
-                        squaredResult += $"{result},";
-                    }
+                    var result = intArray[i] * intArray[i];
+                    squaredResult += $"{result},";
+
                 }
-                Console.WriteLine(squaredResult);
+                Console.WriteLine(squaredResult.TrimEnd(','));
             }
             else if (operationString == "*")
             {
@@ -240,7 +240,7 @@ namespace HelloWorld
                 int average = sum / intArray.Length;
                 Console.WriteLine(average);
             }
-
+            
 
 
             // ***** Letter Loops *****
@@ -276,7 +276,7 @@ namespace HelloWorld
                 }
             }
 
-            Console.WriteLine($"{output}");
+            Console.WriteLine(output);
             */
 
 
